@@ -1,0 +1,25 @@
+{
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "invitacion.mp4",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/invitacion.mp4",
+      "headers": {
+        "Content-Type": "video/mp4"
+      },
+      "dest": "/invitacion.mp4"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

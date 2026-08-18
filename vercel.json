@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "index.html",
@@ -6,6 +7,18 @@
     },
     {
       "src": "invitacion.mp4",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "audio.mp3",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpeg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpg",
       "use": "@vercel/static"
     }
   ],
@@ -16,6 +29,13 @@
         "Content-Type": "video/mp4"
       },
       "dest": "/invitacion.mp4"
+    },
+    {
+      "src": "/audio.mp3",
+      "headers": {
+        "Content-Type": "audio/mpeg"
+      },
+      "dest": "/audio.mp3"
     },
     {
       "src": "/(.*)",

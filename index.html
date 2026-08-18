@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Fernando & Danitza | ¡Nos Casamos!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,12 +40,10 @@
             overflow-x: hidden;
             overflow-y: hidden;
             -webkit-tap-highlight-color: transparent;
-            min-height: 100vh;
-            min-height: 100dvh;
         }
 
         /* =====================================================
-           1. SOBRE F&D - MÁS GRANDE EN CELULAR
+           1. SOBRE F&D - ELEGANTE Y SOFISTICADO
         ===================================================== */
         .envelope-screen {
             position: fixed;
@@ -59,7 +57,6 @@
             align-items: center;
             justify-content: center;
             transition: opacity 1.2s ease, visibility 1.2s ease;
-            padding: 10px;
         }
 
         .envelope-screen.hidden {
@@ -70,8 +67,8 @@
 
         .ambient-light {
             position: absolute;
-            width: 70%;
-            height: 70%;
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(255,255,255,0.8), transparent 70%);
             filter: blur(30px);
@@ -82,7 +79,7 @@
 
         .elegant-frame {
             position: absolute;
-            inset: 20px;
+            inset: 30px;
             border: 1px solid rgba(199, 164, 90, 0.4);
             pointer-events: none;
             z-index: 1;
@@ -97,37 +94,37 @@
 
         .corner-ornament {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             pointer-events: none;
             z-index: 2;
             opacity: 0.6;
         }
 
         .corner-ornament.tl {
-            top: 25px;
-            left: 25px;
+            top: 40px;
+            left: 40px;
             border-top: 2px solid var(--dorado-claro);
             border-left: 2px solid var(--dorado-claro);
         }
 
         .corner-ornament.tr {
-            top: 25px;
-            right: 25px;
+            top: 40px;
+            right: 40px;
             border-top: 2px solid var(--dorado-claro);
             border-right: 2px solid var(--dorado-claro);
         }
 
         .corner-ornament.bl {
-            bottom: 25px;
-            left: 25px;
+            bottom: 40px;
+            left: 40px;
             border-bottom: 2px solid var(--dorado-claro);
             border-left: 2px solid var(--dorado-claro);
         }
 
         .corner-ornament.br {
-            bottom: 25px;
-            right: 25px;
+            bottom: 40px;
+            right: 40px;
             border-bottom: 2px solid var(--dorado-claro);
             border-right: 2px solid var(--dorado-claro);
         }
@@ -136,18 +133,18 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 30px;
+            width: 150px;
+            height: 40px;
             pointer-events: none;
             z-index: 2;
         }
 
         .center-ornament.top {
-            top: 30px;
+            top: 45px;
         }
 
         .center-ornament.bottom {
-            bottom: 30px;
+            bottom: 45px;
         }
 
         .center-ornament::before {
@@ -167,36 +164,72 @@
             top: 50%;
             transform: translate(-50%, -50%);
             color: var(--dorado-claro);
-            font-size: 12px;
-            padding: 0 8px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        .decorative-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(199, 164, 90, 0.3), transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .decorative-line.vertical {
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, rgba(199, 164, 90, 0.3), transparent);
+        }
+
+        .decorative-line.h1 {
+            top: 20%;
+            left: 10%;
+            right: 10%;
+        }
+
+        .decorative-line.h2 {
+            bottom: 20%;
+            left: 10%;
+            right: 10%;
+        }
+
+        .decorative-line.v1 {
+            left: 15%;
+            top: 15%;
+            bottom: 15%;
+        }
+
+        .decorative-line.v2 {
+            right: 15%;
+            top: 15%;
+            bottom: 15%;
         }
 
         .envelope {
             position: relative;
-            width: min(92vw, 500px);
-            height: min(78vh, 680px);
+            width: min(90vw, 480px);
+            height: min(74vh, 650px);
             transform-style: preserve-3d;
             background: linear-gradient(145deg, #f5f0e6, #e8e0d0);
             box-shadow: 0 35px 90px rgba(0, 0, 0, 0.4), inset 0 0 70px rgba(255, 255, 255, 0.3);
             overflow: hidden;
             cursor: pointer;
             border: 1px solid rgba(199, 164, 90, 0.3);
-            border-radius: 4px;
         }
 
         .envelope::after {
             content: "";
             position: absolute;
-            inset: 12px;
+            inset: 14px;
             border: 1px solid rgba(199, 164, 90, 0.6);
             z-index: 50;
             pointer-events: none;
-            border-radius: 2px;
         }
 
         .damask-pattern {
             position: absolute;
-            inset: 16px;
+            inset: 20px;
             background-image: 
                 radial-gradient(circle at 25% 25%, rgba(199, 164, 90, 0.08) 2px, transparent 2px),
                 radial-gradient(circle at 75% 75%, rgba(199, 164, 90, 0.08) 2px, transparent 2px);
@@ -207,8 +240,8 @@
 
         .card {
             position: absolute;
-            width: min(84vw, 420px);
-            height: min(72vh, 600px);
+            width: min(82vw, 400px);
+            height: min(70vh, 580px);
             left: 50%;
             top: 50%;
             transform: translate(-50%, -40%) translateZ(-40px) scale(0.9);
@@ -221,39 +254,36 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             border: 1px solid rgba(199, 164, 90, 0.2);
-            border-radius: 2px;
         }
 
         .card::before {
             content: "";
             position: absolute;
-            inset: 8px;
+            inset: 10px;
             border: 1px solid rgba(199, 164, 90, 0.5);
             pointer-events: none;
-            border-radius: 2px;
         }
 
         .card::after {
             content: "";
             position: absolute;
-            inset: 15px;
+            inset: 18px;
             border: 1px solid rgba(199, 164, 90, 0.3);
             pointer-events: none;
-            border-radius: 2px;
         }
 
         .monogram-circle {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: 1px solid var(--dorado);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
             background: radial-gradient(circle at 30% 30%, #ffffff, #f8f4ec);
         }
@@ -268,36 +298,36 @@
 
         .monogram-circle span {
             font-family: "Great Vibes", cursive;
-            font-size: 24px;
+            font-size: 28px;
             color: var(--dorado-oscuro);
             position: relative;
             z-index: 1;
         }
 
         .card .small-text {
-            font-size: 10px;
-            letter-spacing: 5px;
+            font-size: 25px;
+            letter-spacing: 6px;
             color: var(--dorado-oscuro);
             font-family: "Montserrat", sans-serif;
             text-transform: uppercase;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .card .cordial {
             font-family: "Great Vibes", cursive;
-            font-size: clamp(30px, 7vw, 44px);
+            font-size: clamp(38px, 20vw, 50px);
             color: var(--celeste-profundo);
-            margin: 12px 0 8px;
-            font-weight: 400;
+            margin: 15px 0 10px;
+            font-weight: 580;
         }
 
         .card .getting {
-            font-size: 10px;
-            letter-spacing: 4px;
+            font-size: 20 px;
+            letter-spacing: 5px;
             color: var(--dorado-oscuro);
             font-family: "Montserrat", sans-serif;
-            margin-top: 12px;
-            font-weight: 400;
+            margin-top: 15px;
+            font-weight: 450;
         }
 
         .envelope-top {
@@ -341,8 +371,8 @@
             position: absolute;
             left: 50%;
             top: 46%;
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             transform: translate(-50%, -50%);
             border-radius: 50%;
             background: radial-gradient(circle at 30% 25%, #f4e6ba, #c7a45a 45%, #987834);
@@ -354,7 +384,7 @@
             justify-content: center;
             color: white;
             font-family: "Great Vibes", cursive;
-            font-size: 20px;
+            font-size: 24px;
             transition: 0.8s ease;
         }
 
@@ -368,18 +398,18 @@
 
         .tap-hint {
             position: absolute;
-            bottom: 4%;
+            bottom: 6%;
             left: 50%;
             transform: translateX(-50%);
             color: white;
             font-family: "Montserrat", sans-serif;
             font-size: 11px;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             z-index: 100;
             text-transform: uppercase;
             animation: pulseHint 2s infinite ease-in-out;
             background: rgba(53, 94, 105, 0.6);
-            padding: 10px 22px;
+            padding: 10px 20px;
             border-radius: 30px;
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255,255,255,0.3);
@@ -401,7 +431,7 @@
         .envelope-screen.open .tap-hint { opacity: 0; }
 
         /* =====================================================
-           2. PANTALLA DE VIDEO - MÁS GRANDE
+           2. PANTALLA DE VIDEO - SIN CONTROLES
         ===================================================== */
         .video-screen {
             position: fixed;
@@ -416,7 +446,7 @@
             visibility: hidden;
             pointer-events: none;
             transition: opacity 1s ease, visibility 1s ease;
-            padding: 0;
+            padding: 20px;
         }
 
         .video-screen.active {
@@ -434,18 +464,17 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 100%;
-            max-height: 100vh;
+            max-width: 600px;
             background: #000;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: none;
-            border-radius: 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(199,164,90,0.4);
         }
 
         .video-container video {
             width: 100%;
-            height: 100vh;
-            max-height: 100vh;
+            height: auto;
+            max-height: 65vh;
             object-fit: contain;
             background: #000;
             display: block;
@@ -460,7 +489,7 @@
         }
 
         /* =====================================================
-           3. INVITACIÓN COMPLETA
+           3. INVITACIÓN COMPLETA - OPTIMIZADA PARA CELULAR
         ===================================================== */
         .main-content {
             display: none;
@@ -488,9 +517,9 @@
         }
 
         .section-title {
-            font-size: clamp(24px, 5vw, 36px);
-            font-weight: 400;
-            letter-spacing: 4px;
+            font-size: clamp(28px, 18vw, 38px);
+            font-weight: 500;
+            letter-spacing: 3px;
             color: #43656c;
             text-transform: uppercase;
             font-family: "Cormorant Garamond", serif;
@@ -499,7 +528,7 @@
         .section-subtitle {
             margin-top: 8px;
             font-family: "Great Vibes", cursive;
-            font-size: clamp(28px, 6vw, 42px);
+            font-size: clamp(38px, 28vw, 54px);
             color: var(--dorado-oscuro);
             font-weight: 400;
         }
@@ -519,14 +548,14 @@
             top: 50%;
             transform: translate(-50%, -50%);
             color: var(--dorado);
-            font-size: 10px;
+            font-size: 18px;
             background: var(--marfil);
             padding: 0 8px;
         }
 
         /* ===== HERO CON IMAGEN ===== */
         .hero {
-            min-height: 100dvh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -557,7 +586,7 @@
 
         .hero-tagline {
             font-family: "Montserrat", sans-serif;
-            font-size: 11px;
+            font-size: 22px;
             letter-spacing: 6px;
             color: #fff;
             text-transform: uppercase;
@@ -565,13 +594,13 @@
             display: inline-block;
             border-bottom: 1px solid var(--dorado-claro);
             padding-bottom: 8px;
-            font-weight: 400;
+            font-weight: 500;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero-highlight {
             font-family: "Great Vibes", cursive;
-            font-size: clamp(38px, 10vw, 75px);
+            font-size: clamp(45px, 20vw, 79px);
             color: #fff;
             line-height: 1.1;
             margin-bottom: 15px;
@@ -579,20 +608,10 @@
             text-shadow: 0 2px 15px rgba(0,0,0,0.3);
         }
 
-        .hero-names {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(28px, 6vw, 48px);
-            font-weight: 300;
-            color: #fff;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-        }
-
         .hero-names span {
             font-family: "Great Vibes", cursive;
             color: var(--dorado-claro);
-            font-size: 1.1em;
+            font-size: 1.5em;
             text-transform: none;
             display: inline-block;
             margin: 0 10px;
@@ -617,7 +636,7 @@
 
         .hero-date-banner span {
             font-family: "Montserrat", sans-serif;
-            font-size: 10px;
+            font-size: 28px;
             letter-spacing: 2px;
             color: #fff;
             font-weight: 400;
@@ -625,7 +644,7 @@
 
         .intro-box { max-width: 620px; margin: auto; }
         .intro-box p {
-            font-size: 17px;
+            font-size: 29px;
             line-height: 1.7;
             color: #606b6d;
             font-style: italic;
@@ -649,7 +668,7 @@
         }
 
         .count-number {
-            font-size: 26px;
+            font-size: 30px;
             font-family: "Montserrat", sans-serif;
             font-weight: 300;
             color: var(--celeste-profundo);
@@ -659,7 +678,7 @@
         .count-label {
             margin-top: 8px;
             font-family: "Montserrat", sans-serif;
-            font-size: 9px;
+            font-size: 15px;
             letter-spacing: 1.5px;
             color: var(--gris);
             text-transform: uppercase;
@@ -712,7 +731,7 @@
 
         .event-time-badge {
             font-family: "Montserrat", sans-serif;
-            font-size: 11px;
+            font-size: 38px;
             letter-spacing: 2px;
             color: var(--celeste-profundo);
             font-weight: 400;
@@ -720,8 +739,8 @@
         }
 
         .card-event h3 {
-            font-size: 22px;
-            font-weight: 400;
+            font-size: 30px;
+            font-weight: 500;
             letter-spacing: 2px;
             color: var(--texto-oscuro);
             margin-bottom: 6px;
@@ -729,18 +748,19 @@
         }
 
         .event-place {
-            font-size: 18px;
+            font-size: 28px;
             color: var(--celeste-profundo);
             margin-bottom: 8px;
-            font-weight: 400;
+            font-weight: 450;
         }
 
         .event-address {
-            font-size: 15px;
+            font-size: 20px;
             line-height: 1.5;
             color: var(--gris);
             margin-bottom: 20px;
             font-weight: 300;
+            font-family: "Times New Roman", serif;  /* ← Agrega esta línea */
         }
 
         .btn-map {
@@ -754,7 +774,7 @@
             text-decoration: none;
             letter-spacing: 2px;
             font-family: "Montserrat", sans-serif;
-            font-size: 9px;
+            font-size: 15px;
             font-weight: 400;
             border-radius: 2px;
             transition: var(--trans-smooth);
@@ -768,12 +788,10 @@
             transform: translateY(-2px);
         }
 
-        /* ===== ITINERARIO COMPLETO - CENTRADO ===== */
         .timeline {
             max-width: 520px;
             margin: 40px auto 0;
             position: relative;
-            padding: 0 15px;
         }
 
         .timeline::before {
@@ -795,22 +813,14 @@
             margin-bottom: 30px;
         }
 
-        .timeline-side { 
-            font-size: 16px; 
-            padding: 0 12px; 
-            font-weight: 300;
-        }
-        .timeline-side.left { 
-            text-align: right; 
-        }
-        .timeline-side.right { 
-            text-align: left; 
-        }
+        .timeline-side { font-size: 28px; padding: 0 12px; font-weight: 300; }
+        .timeline-side.left { text-align: right; }
+        .timeline-side.right { text-align: left; }
 
         .timeline-time {
             color: var(--celeste-profundo);
             font-family: "Montserrat", sans-serif;
-            font-size: 10px;
+            font-size: 29px;
             letter-spacing: 2px;
             font-weight: 400;
             margin-bottom: 3px;
@@ -833,7 +843,7 @@
             box-shadow: var(--shadow-soft);
         }
 
-        /* ===== PADRES ===== */
+        /* ===== PADRES DE LOS NOVIOS ===== */
         .parents-grid {
             max-width: 800px;
             margin: 30px auto 0;
@@ -858,7 +868,7 @@
 
         .parent-role {
             font-family: "Montserrat", sans-serif;
-            font-size: 12px;
+            font-size: 18px;
             letter-spacing: 3px;
             color: var(--dorado-oscuro);
             text-transform: uppercase;
@@ -868,7 +878,7 @@
 
         .parent-names {
             font-family: "Cormorant Garamond", serif;
-            font-size: 24px;
+            font-size: 29px;
             line-height: 1.4;
             color: var(--dorado-oscuro);
             font-weight: 500;
@@ -876,7 +886,7 @@
         }
 
         .parent-names .deceased {
-            font-size: 16px;
+            font-size: 50px;
             color: var(--gris);
             font-style: italic;
             font-weight: 300;
@@ -909,7 +919,7 @@
 
         .godparent-role {
             font-family: "Montserrat", sans-serif;
-            font-size: 11px;
+            font-size: 18px;
             letter-spacing: 2px;
             color: var(--dorado-oscuro);
             text-transform: uppercase;
@@ -919,7 +929,7 @@
 
         .godparent-names {
             font-family: "Cormorant Garamond", serif;
-            font-size: 22px;
+            font-size: 29px;
             line-height: 1.4;
             color: var(--dorado-oscuro);
             font-weight: 500;
@@ -929,7 +939,7 @@
         /* ===== CÓDIGO DE VESTIMENTA ===== */
         .dress-code-box { max-width: 600px; margin: auto; }
         .dress-code-box p {
-            font-size: 16px;
+            font-size: 28px;
             line-height: 1.6;
             color: var(--gris);
             font-weight: 300;
@@ -938,7 +948,7 @@
 
         .dress-phrase {
             font-family: "Great Vibes", cursive;
-            font-size: 24px;
+            font-size: 39px;
             color: var(--dorado-oscuro);
             margin: 15px 0 10px;
         }
@@ -953,21 +963,21 @@
         .dress-card {
             padding: 25px 15px;
             background: white;
-            border: 1px solid rgba(199, 164, 90, 0.3);
+            border: 1px solid rgba(199, 164, 90, 3.3);
             border-radius: 2px;
             box-shadow: var(--shadow-soft);
         }
 
-        .dress-icon { font-size: 30px; margin-bottom: 8px; color: var(--dorado-oscuro); }
+        .dress-icon { font-size: 50px; margin-bottom: 8px; color: var(--dorado-oscuro); }
         .dress-type {
             font-family: "Montserrat", sans-serif;
-            font-size: 12px;
+            font-size: 29px;
             letter-spacing: 2px;
             color: var(--celeste-profundo);
             font-weight: 500;
             margin-bottom: 4px;
         }
-        .dress-desc { font-size: 16px; color: var(--texto); font-weight: 400; }
+        .dress-desc { font-size: 24px; color: var(--texto); font-weight: 400; }
 
         /* ===== RSVP ===== */
         .rsvp-container {
@@ -990,7 +1000,7 @@
             border-radius: 2px;
             background: #fafcfc;
             font-family: "Cormorant Garamond", serif;
-            font-size: 16px;
+            font-size: 20px;
             color: var(--texto-oscuro);
             outline: none;
             transition: border 0.3s ease;
@@ -1015,7 +1025,7 @@
             letter-spacing: 2px;
             cursor: pointer;
             font-family: "Montserrat", sans-serif;
-            font-size: 11px;
+            font-size: 17px;
             font-weight: 400;
             border-radius: 2px;
             transition: var(--trans-smooth);
@@ -1060,7 +1070,7 @@
 
         .monogram {
             font-family: "Great Vibes", cursive;
-            font-size: clamp(50px, 14vw, 90px);
+            font-size: clamp(50px, 20vw, 90px);
             color: var(--dorado-oscuro);
             line-height: 1;
             font-weight: 400;
@@ -1068,7 +1078,7 @@
 
         .footer-names {
             margin-top: 12px;
-            font-size: 17px;
+            font-size: 25px;
             letter-spacing: 4px;
             color: var(--texto-oscuro);
             font-family: "Montserrat", sans-serif;
@@ -1077,7 +1087,7 @@
 
         .footer-love {
             margin-top: 15px;
-            font-size: 15px;
+            font-size: 40px;
             color: var(--texto-oscuro);
             font-style: italic;
             font-weight: 300;
@@ -1108,94 +1118,39 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 600px) {
-            .section { padding: 45px 16px; }
+            .section { padding: 50px 16px; }
             .countdown { gap: 6px; }
             .count-box { padding: 10px 4px; }
             .count-number { font-size: 20px; }
-            
-            /* ITINERARIO - se adapta para celular manteniendo todo */
             .timeline::before { left: 30px; }
-            .timeline-item { 
-                grid-template-columns: 50px 1fr; 
-                gap: 12px; 
-                text-align: left;
-                margin-bottom: 25px;
-            }
+            .timeline-item { grid-template-columns: 50px 1fr; gap: 12px; }
             .timeline-side.left { display: none; }
-            .timeline-side.right { 
-                padding-left: 0; 
-                text-align: left;
-            }
-            .timeline-icon { 
-                grid-column: 1; 
-                margin: 0;
-                width: 36px;
-                height: 36px;
-                font-size: 14px;
-            }
-            .timeline-time {
-                font-size: 11px;
-                letter-spacing: 2px;
-            }
-            .timeline-side {
-                font-size: 17px;
-                padding: 0;
-            }
-            
+            .timeline-side.right { padding-left: 0; }
+            .timeline-icon { grid-column: 1; margin: 0; }
             .corner-ornament { display: none; }
-            .elegant-frame { inset: 12px; }
+            .elegant-frame { inset: 15px; }
             .center-ornament { display: none; }
             .parent-names { font-size: 20px; }
             .godparent-names { font-size: 18px; }
             .parents-grid { grid-template-columns: 1fr; }
             .godparents-grid { grid-template-columns: 1fr; }
             .dress-grid { grid-template-columns: 1fr; }
-            .tap-hint { 
-                font-size: 10px; 
-                padding: 8px 16px; 
-                white-space: normal;
-                bottom: 3%;
-            }
+            .tap-hint { font-size: 9px; padding: 8px 16px; white-space: normal; }
             .hero-date-banner { gap: 8px; padding: 10px 15px; }
             .hero-date-banner span { font-size: 9px; }
             .card-event { padding: 25px 15px; }
             .rsvp-container { padding: 25px 15px; }
-            .envelope { 
-                width: min(95vw, 480px); 
-                height: min(75vh, 650px); 
-            }
-            .card { 
-                width: min(88vw, 400px); 
-                height: min(68vh, 580px); 
-                padding: 16px; 
-            }
-            .seal { width: 60px; height: 60px; font-size: 16px; }
-            .monogram-circle { width: 60px; height: 60px; }
-            .monogram-circle span { font-size: 20px; }
-            
-            /* VIDEO MÁS GRANDE */
-            .video-container video {
-                height: 100dvh;
-                max-height: 100dvh;
-            }
-            .video-container {
-                max-height: 100dvh;
-                border-radius: 0;
-            }
-            .video-screen { padding: 0; }
+            .envelope { width: min(92vw, 480px); height: min(70vh, 650px); }
+            .card { width: min(85vw, 400px); height: min(66vh, 580px); padding: 20px; }
         }
 
         @media (max-width: 400px) {
-            .hero-highlight { font-size: 30px; }
-            .hero-names { font-size: 20px; letter-spacing: 2px; }
-            .section-title { font-size: 18px; letter-spacing: 2px; }
-            .section-subtitle { font-size: 22px; }
-            .parent-names { font-size: 17px; }
-            .godparent-names { font-size: 15px; }
-            .envelope { height: min(70vh, 600px); }
-            .card { height: min(62vh, 520px); }
-            .timeline-side { font-size: 15px; }
-            .timeline-time { font-size: 10px; }
+            .hero-highlight { font-size: 32px; }
+            .hero-names { font-size: 22px; letter-spacing: 2px; }
+            .section-title { font-size: 20px; }
+            .section-subtitle { font-size: 24px; }
+            .parent-names { font-size: 18px; }
+            .godparent-names { font-size: 16px; }
         }
     </style>
 </head>
@@ -1235,7 +1190,7 @@
         <div class="tap-hint">TOCA PARA ABRIR</div>
     </div>
 
-    <!-- VIDEO -->
+    <!-- VIDEO - SIN CONTROLES -->
     <div class="video-screen" id="videoScreen">
         <div class="video-container">
             <video id="invitationVideo" playsinline muted>
@@ -1280,9 +1235,9 @@
         <section class="section section-blue">
             <div class="section-title">Cuenta Regresiva</div>
             <div class="section-subtitle">cada segundo nos acerca más</div>
-            <div class="ornament"></div>
-            <p style="font-size: 18px; color: var(--celeste-profundo); letter-spacing: 2px;">
-                10 DE OCTUBRE DE 2026 
+            <div class="event-time-badge"></div>
+            <p style="font-size: 30px; color: var(--celeste-profundo); letter-spacing: 2px; font-family: 'Times New Roman', serif; font-weight: 600;">
+              10 DE OCTUBRE DE 2026
             </p>
             <div class="countdown" id="countdown">
                 <div class="count-box">
@@ -1337,18 +1292,18 @@
             </div>
         </section>
 
-        <!-- ===== ITINERARIO COMPLETO ===== -->
+        <!-- ITINERARIO -->
         <section class="section section-blue">
             <div class="section-title">Itinerario</div>
             <div class="section-subtitle">Nuestro gran día</div>
             <div class="ornament"></div>
             <div class="timeline">
                 <div class="timeline-item">
-                    </div></div>
-                    <div class="timeline-icon">⛪</div>
                     <div class="timeline-side left">
                         <div class="timeline-time">16:00</div>Ceremonia
-                    <div>
+                    </div>
+                    <div class="timeline-icon">⛪</div>
+                    <div></div>
                 </div>
                 <div class="timeline-item">
                     <div></div>
@@ -1358,11 +1313,11 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    </div></div>
-                    <div class="timeline-icon">🥂</div>
-                        <div class="timeline-side left">
+                    <div class="timeline-side left">
                         <div class="timeline-time">18:30</div>Recepción
-                    <div>
+                    </div>
+                    <div class="timeline-icon">🥂</div>
+                    <div></div>
                 </div>
                 <div class="timeline-item">
                     <div></div>
@@ -1384,7 +1339,6 @@
                     <div class="parent-role"> Padres del Novio</div>
                     <div class="parent-names">
                         Juan Manuel Arboleda Flores(†)
-                        <span class="deceased"> </span>
                         <br>
                         Justa Suárez Chore
                     </div>
@@ -1409,17 +1363,17 @@
                 <div class="godparent-card">
                     <div class="godparent-role">⛪ Padrinos de Religión</div>
                     <div class="godparent-names">
-                        Julio Cruz Gamon
+                        Julio Cruz Gamón
                         <br>
-                        Reina Arrazola Campero
+                        Reina Arrázola Campero
                     </div>
                 </div>
                 <div class="godparent-card">
                     <div class="godparent-role">📜 Padrinos de Civil</div>
                     <div class="godparent-names">
-                        Eduardo Otterburg Lopez
+                        Eduardo Otterburg López
                         <br>
-                        Flora Daza Videz
+                        Flora Daza Vidéz
                     </div>
                 </div>
             </div>
@@ -1438,17 +1392,17 @@
                 <div class="dress-phrase">✨ Vístete con la libertad de ser tú ✨</div>
                 <div class="dress-grid">
                     <div class="dress-card">
-                        <div class="dress-icon">👗</div>
+                        <div class="dress-icon"></div>
                         <div class="dress-type">Damas</div>
                         <div class="dress-desc">Libre Elección</div>
                     </div>
                     <div class="dress-card">
-                        <div class="dress-icon">🤵</div>
+                        <div class="dress-icon"></div>
                         <div class="dress-type">Varones</div>
                         <div class="dress-desc">Libre Elección</div>
                     </div>
                 </div>
-                <p style="margin-top: 20px; font-size: 15px; color: var(--gris);">
+                <p style="margin-top: 20px; font-size: 25px; color: var(--gris);">
                     Siéntete cómodo y elegante, lo importante es celebrar juntos. ✨
                 </p>
             </div>
@@ -1484,7 +1438,7 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="monogram">F Y D</div>
+            <div class="monogram"></div>
             <div class="footer-names">FERNANDO y DANITZA</div>
             <div class="footer-love">
                 Con amor, esperamos compartir este día contigo.
@@ -1521,18 +1475,22 @@
                 
                 const video = document.getElementById("invitationVideo");
                 
+                // Reproducir video automáticamente
                 video.play().catch(() => {
+                    // Si no se reproduce automáticamente, intentamos de nuevo
                     setTimeout(() => {
                         video.play().catch(() => {});
                     }, 500);
                 });
                 
+                // Auto-avanzar cuando termina el video
                 video.addEventListener("ended", function() {
                     setTimeout(() => {
                         skipVideo();
                     }, 300);
                 });
                 
+                // Forzar skip después de 8 segundos (por si el video es muy largo)
                 setTimeout(() => {
                     if (document.getElementById("videoScreen").classList.contains("active")) {
                         skipVideo();
@@ -1554,6 +1512,7 @@
             document.body.style.overflowY = "auto";
             window.scrollTo({ top: 0, behavior: "smooth" });
 
+            // ====== REPRODUCIR MÚSICA AUTOMÁTICAMENTE ======
             const music = document.getElementById("weddingMusic");
             const musicBtn = document.getElementById("musicButton");
             music.currentTime = 0;
@@ -1565,6 +1524,7 @@
             });
         }
 
+        // Cuenta regresiva
         const weddingDate = new Date(2026, 9, 10, 18, 0, 0);
 
         function updateCountdown() {
@@ -1593,6 +1553,7 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
+        // ===== RSVP - Redirige a Google Forms =====
         function sendRSVP(event) {
             event.preventDefault();
     
@@ -1617,6 +1578,7 @@
             document.getElementById("message").value = "";
         }
 
+        // ===== MÚSICA - TOGGLE =====
         const music = document.getElementById("weddingMusic");
         const musicBtn = document.getElementById("musicButton");
 

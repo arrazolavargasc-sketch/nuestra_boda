@@ -429,6 +429,7 @@
         .envelope-screen.open .envelope-right { transform: translateX(20%); opacity: 0.15; }
         .envelope-screen.open .envelope-bottom { transform: translateY(16%); opacity: 0.15; }
         .envelope-screen.open .tap-hint { opacity: 0; }
+        
 
         /* =====================================================
            2. PANTALLA DE VIDEO - SIN CONTROLES
@@ -563,6 +564,48 @@
             text-align: center;
             padding: 40px 20px;
         }
+        /* ===== AVISO DE DESPLAZAMIENTO ===== */
+.scroll-hint {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 20px 0 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--gris);
+    animation: bounceArrow 2s infinite ease-in-out;
+    cursor: pointer;
+    background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.95) 100%);
+    margin-top: -30px;
+    padding-top: 40px;
+}
+
+.scroll-hint span {
+    display: block;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.scroll-arrow {
+    font-size: 30px;
+    color: var(--dorado);
+    line-height: 1;
+    margin-top: 5px;
+}
+
+@keyframes bounceArrow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+.scroll-hint.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+        
 
         .hero::before {
             content: "";
@@ -1217,6 +1260,11 @@
                 </div>
             </div>
         </section>
+        <!-- ===== AVISO DE DESPLAZAMIENTO ===== -->
+        <div class="scroll-hint" id="scrollHint">
+          <span>⬇️ Desliza hacia abajo</span>
+          <div class="scroll-arrow">⌄</div>
+       </div>
 
         <!-- INTRO -->
         <section class="section section-light">
@@ -1523,6 +1571,22 @@
             }).catch(() => {
                 console.log("El usuario debe interactuar para reproducir música");
             });
+        }
+        // ===== OCULTAR AVISO AL HACER SCROLL =====
+            const scrollHint = document.getElementById('scrollHint');
+
+            if (scrollHint) {
+               window.addEventListener('scroll', function() {
+                   if (window.scrollY > 100) {
+                       scrollHint.classList.add('fade-out');
+                  } else {
+                        scrollHint.classList.remove('fade-out');
+                  }
+             });
+
+             scrollHint.addEventListener('click', function() {
+                  scrollHint.classList.add('fade-out');
+              });
         }
 
         // Cuenta regresiva

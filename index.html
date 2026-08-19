@@ -447,7 +447,7 @@
             visibility: hidden;
             pointer-events: none;
             transition: opacity 1s ease, visibility 1s ease;
-            padding: 20px;
+            padding: 0px;
         }
 
         .video-screen.active {
@@ -465,7 +465,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 100px;
             background: #000;
             border-radius: 4px;
             overflow: hidden;
@@ -474,8 +474,8 @@
 
         .video-container video {
             width: 100%;
-            height: auto;
-            max-height: 65vh;
+            height: 100vh;
+            max-height: 100vh;
             object-fit: contain;
             background: #000;
             display: block;
@@ -565,47 +565,76 @@
             padding: 40px 20px;
         }
         /* ===== AVISO DE DESPLAZAMIENTO ===== */
-.scroll-hint {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 20px 0 30px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: var(--gris);
-    animation: bounceArrow 2s infinite ease-in-out;
-    cursor: pointer;
-    background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.95) 100%);
-    margin-top: -30px;
-    padding-top: 40px;
-}
 
-.scroll-hint span {
-    display: block;
-    font-weight: 300;
-    text-transform: uppercase;
-}
+         .scroll-hint {
+           position: fixed;
+           top: 20px;
+           right: 20px;
+            z-index: 100;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+           letter-spacing: 1.6px;
+          color: #fff;
+          background: rgba(194, 195, 196, 0.712);
+           backdrop-filter: blur(5px);
+           padding: 12px 18px;
+           border-radius: 30px;
+          border: 1px solid rgba(255,255,255,0.2);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+          cursor: pointer;
+          animation: bounceArrow 2s infinite ease-in-out;
+          display: flex;
+           align-items: center;
+           gap: 10px;
+          transition: all 0.5s ease;
+        }
 
-.scroll-arrow {
-    font-size: 30px;
-    color: var(--dorado);
-    line-height: 1;
-    margin-top: 5px;
-}
+          .scroll-hint span {
+          font-weight: 400;
+           text-transform: uppercase;
+          white-space: nowrap;
+        }
+
+         .scroll-arrow {
+          font-size: 20px;
+          line-height: 1;
+         color: #fff;
+        }
 
 @keyframes bounceArrow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+     0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(5px); }
+        }
+
+         .scroll-hint.fade-out {
+         opacity: 0;
+         transform: translateY(-20px) scale(0.9);
+         transition: opacity 0.6s ease, transform 0.6s ease;
+          pointer-events: none;
+         }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .scroll-hint {
+        top: 15px;
+        right: 15px;
+        font-size: 10px;
+        padding: 8px 14px;
+        gap: 6px;
+    }
+    .scroll-arrow {
+        font-size: 14px;
+    }
 }
 
-.scroll-hint.fade-out {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    pointer-events: none;
+@media (max-width: 400px) {
+    .scroll-hint {
+        top: 10px;
+        right: 10px;
+        font-size: 9px;
+        padding: 6px 12px;
+    }
 }
-        
 
         .hero::before {
             content: "";
@@ -979,6 +1008,54 @@
             font-weight: 500;
             letter-spacing: 1px;
         }
+        /* ===== NO NIÑOS ===== */
+.no-kids-box {
+    max-width: 750px;
+    margin: 20px auto 0;
+    padding: 60px 50px;
+    background: white;
+    border: 2px solid var(--dorado);
+    border-radius: 4px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.no-kids-box::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(199, 164, 90, 0.3);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.no-kids-text {
+    font-size: 29px !important;
+    line-height: 1.7;
+    color: var(--texto);
+    font-weight: 400;
+}
+
+.no-kids-text strong {
+    color: var(--celeste-profundo);
+    font-weight: 600;
+}
+
+.no-kids-heart {
+    font-size: 28px;
+    margin-top: 20px;
+    color: var(--dorado-oscuro);
+}
+.no-kids-box {
+    padding: 30px 20px;
+}
+.no-kids-text {
+    font-size: 16px;
+}
+.no-kids-icon {
+    font-size: 45px;
+}
 
         /* ===== CÓDIGO DE VESTIMENTA ===== */
         .dress-code-box { max-width: 600px; margin: auto; }
@@ -1120,18 +1197,9 @@
             font-weight: 400;
         }
 
-        .footer-names {
-            margin-top: 12px;
-            font-size: 25px;
-            letter-spacing: 4px;
-            color: var(--texto-oscuro);
-            font-family: "Montserrat", sans-serif;
-            font-weight: 300;
-        }
-
         .footer-love {
             margin-top: 15px;
-            font-size: 40px;
+            font-size: 35px;
             color: var(--texto-oscuro);
             font-style: italic;
             font-weight: 300;
@@ -1262,7 +1330,7 @@
         </section>
         <!-- ===== AVISO DE DESPLAZAMIENTO ===== -->
         <div class="scroll-hint" id="scrollHint">
-          <span>⬇️ Desliza hacia abajo</span>
+          <span> Desliza hacia abajo</span>
           <div class="scroll-arrow">⌄</div>
        </div>
 
@@ -1427,6 +1495,27 @@
                 </div>
             </div>
         </section>
+        <!-- ===== NO NIÑOS ===== -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title">No Niños</div>
+        <div class="section-subtitle">un espacio para adultos</div>
+        <div class="ornament"></div>
+        <div class="no-kids-box">
+            <div class="no-kids-icon"></div>
+            <p class="no-kids-text">
+                Amamos a los niños, pero queremos que disfrutes del evento tanto como
+                nosotros, por ese motivo hemos reservado los lugares solo para adultos.
+                Con mucho respeto y cariño, les informamos que nuestra celebración será 
+                <strong>gradecemos su comprensión</strong>.
+                <br><br>
+                Con mucho respeto y cariño, les informamos que nuestra celebración será 
+                <strong>Exclusivamente para adultos</strong>.
+            </p>
+            <div class="no-kids-heart">💕</div>
+        </div>
+    </div>
+</section>
 
         <!-- ===== CÓDIGO DE VESTIMENTA ===== -->
         <section class="section section-light">
@@ -1463,21 +1552,17 @@
             <div class="section-subtitle">cuéntanos si vendrás</div>
             <div class="ornament"></div>
             <div class="rsvp-container">
-                <p style="font-size: 16px; color: var(--gris); margin-bottom: 15px;">
-                    Por favor confirma tu asistencia antes del <strong>05 de octubre</strong>.
+                <p style="font-size: 25px; color: var(--gris); margin-bottom: 15px;">
+                    Preparamos un lugar muy especial para ti, por favor confirma tu asistencia con este pase </strong>.
                     <br>
-                    <span style="font-size: 13px; color: var(--dorado-oscuro);">Tus datos se guardarán en nuestro registro de invitados</span>
+                    <span style="font-size: 20px; color: var(--dorado-oscuro);">Tus datos se guardarán en nuestro registro de invitados</span>
                 </p>
                 <form class="rsvp-form" onsubmit="sendRSVP(event)">
-                    <input type="text" id="family" placeholder="Familia (ej: Familia Pérez, Familia López...)" required>
+                    <input type="text" id="family" placeholder="Escribe los Nombres o Apodos " required>
                     <select id="guests" required>
                         <option value="">Número de personas</option>
                         <option value="1">1 Persona</option>
                         <option value="2">2 Personas</option>
-                        <option value="3">3 Personas</option>
-                        <option value="4">4 Personas</option>
-                        <option value="5">5 Personas</option>
-                        <option value="6+">6+ Personas</option>
                     </select>
                     <textarea id="message" placeholder="Mensaje para los novios (opcional)"></textarea>
                     <button class="rsvp-button" type="submit">✅ CONFIRMAR ASISTENCIA</button>
@@ -1488,7 +1573,6 @@
         <!-- FOOTER -->
         <footer class="footer">
             <div class="monogram"></div>
-            <div class="footer-names">FERNANDO y DANITZA</div>
             <div class="footer-love">
                 Con amor, esperamos compartir este día contigo.
                 <br><br>
@@ -1573,21 +1657,21 @@
             });
         }
         // ===== OCULTAR AVISO AL HACER SCROLL =====
-            const scrollHint = document.getElementById('scrollHint');
+const scrollHint = document.getElementById('scrollHint');
 
-            if (scrollHint) {
-               window.addEventListener('scroll', function() {
-                   if (window.scrollY > 100) {
-                       scrollHint.classList.add('fade-out');
-                  } else {
-                        scrollHint.classList.remove('fade-out');
-                  }
-             });
-
-             scrollHint.addEventListener('click', function() {
-                  scrollHint.classList.add('fade-out');
-              });
+if (scrollHint) {
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 30) {
+            scrollHint.classList.add('fade-out');
+        } else {
+            scrollHint.classList.remove('fade-out');
         }
+    });
+
+    scrollHint.addEventListener('click', function() {
+        scrollHint.classList.add('fade-out');
+    });
+}
 
         // Cuenta regresiva
         const weddingDate = new Date(2026, 9, 10, 18, 0, 0);

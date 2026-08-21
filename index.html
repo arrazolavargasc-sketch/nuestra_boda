@@ -1642,69 +1642,71 @@
         let opened = false;
         let isMusicPlaying = false;
 
-        function openEnvelope() {
-            if (opened) return;
-            opened = true;
+ function openEnvelope() {
+    if (opened) return;
+    opened = true;
 
-            const screen = document.getElementById("envelopeScreen");
-            screen.classList.add("open");
+    const screen = document.getElementById("envelopeScreen");
+    screen.classList.add("open");
 
+    setTimeout(() => {
+        screen.classList.add("hidden");
+        
+        const videoScreen = document.getElementById("videoScreen");
+        videoScreen.classList.add("active");
+        
+        const video = document.getElementById("invitationVideo");
+        
+        // Reproducir video
+        video.play().catch(() => {
             setTimeout(() => {
-                screen.classList.add("hidden");
-                
-                const videoScreen = document.getElementById("videoScreen");
-                videoScreen.classList.add("active");
-                
-                const video = document.getElementById("invitationVideo");
-                
-                // Reproducir video automáticamente
-                video.play().catch(() => {
-                    // Si no se reproduce automáticamente, intentamos de nuevo
-                    setTimeout(() => {
-                        video.play().catch(() => {});
-                    }, 500);
-                });
-                
-                // Auto-avanzar cuando termina el video
-                video.addEventListener("ended", function() {
-                    setTimeout(() => {
-                        skipVideo();
-                    }, 300);
-                });
-                
-                // Forzar skip después de 8 segundos (por si el video es muy largo)
-                setTimeout(() => {
-                    if (document.getElementById("videoScreen").classList.contains("active")) {
-                        skipVideo();
-                    }
-                }, 10000);
-                
-            }, 2200);
-        }
+                video.play().catch(() => {});
+            }, 500);
+        });
 
-        function skipVideo() {
-            const videoScreen = document.getElementById("videoScreen");
-            videoScreen.classList.add("hidden");
-            videoScreen.classList.remove("active");
-            
-            const video = document.getElementById("invitationVideo");
-            video.pause();
-            
-            document.getElementById("mainContent").classList.add("visible");
-            document.body.style.overflowY = "auto";
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        // ====== REPRODUCIR MÚSICA AL MISMO TIEMPO QUE EL VIDEO ======
+        const music = document.getElementById("weddingMusic");
+        const musicBtn = document.getElementById("musicButton");
+        music.currentTime = 0;
+        music.play().then(() => {
+            musicBtn.textContent = "⏸";
+            isMusicPlaying = true;
+        }).catch(() => {
+            console.log("El usuario debe interactuar para reproducir música");
+        });
+        
+        // Auto-avanzar cuando termina el video
+        video.addEventListener("ended", function() {
+            setTimeout(() => {
+                skipVideo();
+            }, 300);
+        });
+        
+        // Forzar skip después de 10 segundos
+        setTimeout(() => {
+            if (document.getElementById("videoScreen").classList.contains("active")) {
+                skipVideo();
+            }
+        }, 10000);
+        
+    }, 2200);
+}
+function skipVideo() {
+    const videoScreen = document.getElementById("videoScreen");
+    videoScreen.classList.add("hidden");
+    videoScreen.classList.remove("active");
+    
+    const video = document.getElementById("invitationVideo");
+    video.pause();
+    
+    document.getElementById("mainContent").classList.add("visible");
+    document.body.style.overflowY = "auto";
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-            // ====== REPRODUCIR MÚSICA AUTOMÁTICAMENTE ======
-            const music = document.getElementById("weddingMusic");
-            const musicBtn = document.getElementById("musicButton");
-            music.currentTime = 0;
-            music.play().then(() => {
-                musicBtn.textContent = "⏸";
-                isMusicPlaying = true;
-            }).catch(() => {
-                console.log("El usuario debe interactuar para reproducir música");
-            });
-        }
+    // ====== ELIMINA ESTO (ya no va aquí) ======
+    // const music = document.getElementById("weddingMusic");
+    // music.play();
+}
         // ===== OCULTAR AVISO AL HACER SCROLL =====
 const scrollHint = document.getElementById('scrollHint');
 
